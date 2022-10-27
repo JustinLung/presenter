@@ -10,7 +10,11 @@
     "codegen": "graphql-codegen --config codegen.ts"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.3.6",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "dotenv": "^16.0.3",
+    "framer-motion": "^7.6.1",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
     "next": "^13.0.0",
