@@ -1,4 +1,4 @@
-import { Flex, Link, Heading } from "@chakra-ui/react";
+import { Flex, Link } from "@chakra-ui/react";
 import { theme } from "../styles/theme";
 
 export default function Header() {
