@@ -1,0 +1,28 @@
+fragment SlideBasic on SlideBasic {
+	__typename
+	contents {
+		html
+	}
+	colorScheme
+}
+
+fragment SlideImage on SlideImage {
+	__typename
+	image {
+		url
+	}
+	colorScheme
+}
+
+fragment SlideImageFull on SlideImageFull {
+	__typename
+	image {
+		url
+	}
+}
+
+fragment SlidePlanning on SlidePlanning {
+	__typename
+	title
+	planningPoints
+}

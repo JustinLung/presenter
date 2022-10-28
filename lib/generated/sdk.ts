@@ -707,6 +707,13 @@ export type ColorInput = {
   rgba?: InputMaybe<RgbaInput>;
 };
 
+/** Color scheme of the slide */
+export enum ColorScheme {
+  Blue = 'blue',
+  Green = 'green',
+  Purple = 'purple'
+}
+
 export type ConnectPositionInput = {
   /** Connect document after specified document */
   after?: InputMaybe<Scalars['ID']>;
@@ -3036,6 +3043,7 @@ export type ScheduledReleaseWhereUniqueInput = {
 
 export type SlideBasic = {
   __typename?: 'SlideBasic';
+  colorScheme: ColorScheme;
   contents: RichText;
   /** The unique identifier */
   id: Scalars['ID'];
@@ -3061,6 +3069,7 @@ export type SlideBasicConnection = {
 };
 
 export type SlideBasicCreateInput = {
+  colorScheme: ColorScheme;
   contents: Scalars['RichTextAST'];
 };
 
@@ -3100,6 +3109,13 @@ export type SlideBasicManyWhereInput = {
   OR?: InputMaybe<Array<SlideBasicWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  colorScheme?: InputMaybe<ColorScheme>;
+  /** All values that are contained in given list. */
+  colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
+  /** All values that are not equal to given value. */
+  colorScheme_not?: InputMaybe<ColorScheme>;
+  /** All values that are not contained in given list. */
+  colorScheme_not_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -3122,6 +3138,8 @@ export type SlideBasicManyWhereInput = {
 };
 
 export enum SlideBasicOrderByInput {
+  ColorSchemeAsc = 'colorScheme_ASC',
+  ColorSchemeDesc = 'colorScheme_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC'
 }
@@ -3207,6 +3225,7 @@ export type SlideBasicParentWhereUniqueInput = {
 };
 
 export type SlideBasicUpdateInput = {
+  colorScheme?: InputMaybe<ColorScheme>;
   contents?: InputMaybe<Scalars['RichTextAST']>;
 };
 
@@ -3222,6 +3241,7 @@ export type SlideBasicUpdateManyInlineInput = {
 };
 
 export type SlideBasicUpdateManyInput = {
+  colorScheme?: InputMaybe<ColorScheme>;
   contents?: InputMaybe<Scalars['RichTextAST']>;
 };
 
@@ -3292,6 +3312,13 @@ export type SlideBasicWhereInput = {
   OR?: InputMaybe<Array<SlideBasicWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  colorScheme?: InputMaybe<ColorScheme>;
+  /** All values that are contained in given list. */
+  colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
+  /** All values that are not equal to given value. */
+  colorScheme_not?: InputMaybe<ColorScheme>;
+  /** All values that are not contained in given list. */
+  colorScheme_not_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -3320,6 +3347,7 @@ export type SlideBasicWhereUniqueInput = {
 
 export type SlideImage = {
   __typename?: 'SlideImage';
+  colorScheme: ColorScheme;
   /** The unique identifier */
   id: Scalars['ID'];
   image: Asset;
@@ -3350,6 +3378,7 @@ export type SlideImageConnection = {
 };
 
 export type SlideImageCreateInput = {
+  colorScheme: ColorScheme;
   image: AssetCreateOneInlineInput;
 };
 
@@ -3681,6 +3710,13 @@ export type SlideImageManyWhereInput = {
   OR?: InputMaybe<Array<SlideImageWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  colorScheme?: InputMaybe<ColorScheme>;
+  /** All values that are contained in given list. */
+  colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
+  /** All values that are not equal to given value. */
+  colorScheme_not?: InputMaybe<ColorScheme>;
+  /** All values that are not contained in given list. */
+  colorScheme_not_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -3704,6 +3740,8 @@ export type SlideImageManyWhereInput = {
 };
 
 export enum SlideImageOrderByInput {
+  ColorSchemeAsc = 'colorScheme_ASC',
+  ColorSchemeDesc = 'colorScheme_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC'
 }
@@ -3789,6 +3827,7 @@ export type SlideImageParentWhereUniqueInput = {
 };
 
 export type SlideImageUpdateInput = {
+  colorScheme?: InputMaybe<ColorScheme>;
   image?: InputMaybe<AssetUpdateOneInlineInput>;
 };
 
@@ -3804,8 +3843,7 @@ export type SlideImageUpdateManyInlineInput = {
 };
 
 export type SlideImageUpdateManyInput = {
-  /** No fields in updateMany data input */
-  _?: InputMaybe<Scalars['String']>;
+  colorScheme?: InputMaybe<ColorScheme>;
 };
 
 export type SlideImageUpdateManyWithNestedWhereInput = {
@@ -3875,6 +3913,13 @@ export type SlideImageWhereInput = {
   OR?: InputMaybe<Array<SlideImageWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  colorScheme?: InputMaybe<ColorScheme>;
+  /** All values that are contained in given list. */
+  colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
+  /** All values that are not equal to given value. */
+  colorScheme_not?: InputMaybe<ColorScheme>;
+  /** All values that are not contained in given list. */
+  colorScheme_not_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -3904,6 +3949,7 @@ export type SlideImageWhereUniqueInput = {
 
 export type SlidePlanning = {
   __typename?: 'SlidePlanning';
+  colorScheme: ColorScheme;
   /** The unique identifier */
   id: Scalars['ID'];
   planningPoints?: Maybe<Scalars['String']>;
@@ -3930,6 +3976,7 @@ export type SlidePlanningConnection = {
 };
 
 export type SlidePlanningCreateInput = {
+  colorScheme: ColorScheme;
   planningPoints?: InputMaybe<Scalars['String']>;
   title: Scalars['String'];
 };
@@ -3970,6 +4017,13 @@ export type SlidePlanningManyWhereInput = {
   OR?: InputMaybe<Array<SlidePlanningWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  colorScheme?: InputMaybe<ColorScheme>;
+  /** All values that are contained in given list. */
+  colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
+  /** All values that are not equal to given value. */
+  colorScheme_not?: InputMaybe<ColorScheme>;
+  /** All values that are not contained in given list. */
+  colorScheme_not_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -4030,6 +4084,8 @@ export type SlidePlanningManyWhereInput = {
 };
 
 export enum SlidePlanningOrderByInput {
+  ColorSchemeAsc = 'colorScheme_ASC',
+  ColorSchemeDesc = 'colorScheme_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   PlanningPointsAsc = 'planningPoints_ASC',
@@ -4119,6 +4175,7 @@ export type SlidePlanningParentWhereUniqueInput = {
 };
 
 export type SlidePlanningUpdateInput = {
+  colorScheme?: InputMaybe<ColorScheme>;
   planningPoints?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
 };
@@ -4135,6 +4192,7 @@ export type SlidePlanningUpdateManyInlineInput = {
 };
 
 export type SlidePlanningUpdateManyInput = {
+  colorScheme?: InputMaybe<ColorScheme>;
   planningPoints?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
 };
@@ -4206,6 +4264,13 @@ export type SlidePlanningWhereInput = {
   OR?: InputMaybe<Array<SlidePlanningWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  colorScheme?: InputMaybe<ColorScheme>;
+  /** All values that are contained in given list. */
+  colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
+  /** All values that are not equal to given value. */
+  colorScheme_not?: InputMaybe<ColorScheme>;
+  /** All values that are not contained in given list. */
+  colorScheme_not_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -4775,19 +4840,39 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
-export type TestqQueryVariables = Exact<{ [key: string]: never; }>;
+export type SlideBasicFragment = { __typename?: 'SlideBasic', colorScheme: ColorScheme, contents: { __typename?: 'RichText', html: string } };
+
+export type GetPresentationIdQueryVariables = Exact<{
+  id: Scalars['ID'];
+}>;
 
 
-export type TestqQuery = { __typename?: 'Query', presentation?: { __typename?: 'Presentation', title: string } };
+export type GetPresentationIdQuery = { __typename?: 'Query', presentation?: { __typename?: 'Presentation', title: string, slides: Array<(
+      { __typename: 'SlideBasic' }
+      & SlideBasicFragment
+    ) | { __typename: 'SlideImage' } | { __typename: 'SlideImageFull' } | { __typename: 'SlidePlanning' }> } };
 
-
-export const TestqDocument = gql`
-    query testq {
-  presentation(where: {id: "cl9pxhz8j07oo0aw9pekd5tgs"}) {
-    title
+export const SlideBasicFragmentDoc = gql`
+    fragment SlideBasic on SlideBasic {
+  contents {
+    html
   }
+  colorScheme
 }
     `;
+export const GetPresentationIdDocument = gql`
+    query getPresentationId($id: ID!) {
+  presentation(where: {id: $id}) {
+    title
+    slides {
+      __typename
+      ... on SlideBasic {
+        ...SlideBasic
+      }
+    }
+  }
+}
+    ${SlideBasicFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
@@ -4796,8 +4881,8 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    testq(variables?: TestqQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<TestqQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<TestqQuery>(TestqDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'testq', 'query');
+    getPresentationId(variables: GetPresentationIdQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetPresentationIdQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetPresentationIdQuery>(GetPresentationIdDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPresentationId', 'query');
     }
   };
 }
@@ -4806,8 +4891,8 @@ export function getSdkWithHooks(client: GraphQLClient, withWrapper: SdkFunctionW
   const sdk = getSdk(client, withWrapper);
   return {
     ...sdk,
-    useTestq(key: SWRKeyInterface, variables?: TestqQueryVariables, config?: SWRConfigInterface<TestqQuery, ClientError>) {
-      return useSWR<TestqQuery, ClientError>(key, () => sdk.testq(variables), config);
+    useGetPresentationId(key: SWRKeyInterface, variables: GetPresentationIdQueryVariables, config?: SWRConfigInterface<GetPresentationIdQuery, ClientError>) {
+      return useSWR<GetPresentationIdQuery, ClientError>(key, () => sdk.getPresentationId(variables), config);
     }
   };
 }
