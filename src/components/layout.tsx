@@ -5,7 +5,7 @@ interface layoutProps {
   children: ReactNode;
 }
 
-export default function layout({ children }: layoutProps) {
+export default function Layout({ children }: layoutProps) {
   return (
     <>
       <Header />

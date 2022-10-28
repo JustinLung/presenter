@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen": "graphql-codegen --config codegen.ts"
+    "codegen": "graphql-codegen --config codegen.ts",
+    "svgr": "npx @svgr/cli@5 ./icons --template ./icons/template.js --ext tsx --out-dir ./icons/components --ref"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.3.6",
@@ -28,6 +29,7 @@
     "@graphql-codegen/typescript": "^2.8.0",
     "@graphql-codegen/typescript-graphql-request": "^4.5.7",
     "@graphql-codegen/typescript-operations": "^2.5.5",
+    "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.6",
     "@types/react": "18.0.23",
     "eslint": "8.26.0",

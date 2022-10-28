@@ -1,28 +1,25 @@
-import { nextClient } from '@lib/client'
-import { Presentation } from '@lib/generated/sdk'
-import { ComponentSwitch } from '@/components/ComponentSwitch'
+import { nextClient } from "@lib/client";
+import PresentationCard from "@/components/PresentationCard";
 
-interface PageProps {
-	presentation: Presentation
-}
-
-export default function Page(props: PageProps) {
-	const { presentation } = props
-	return (
-		<>
-			<ComponentSwitch data={presentation.slides} />
-		</>
-	)
+export default function Page() {
+  return (
+    <PresentationCard
+      presentation="-"
+      presentationTitle="Performance"
+      presentationAuthor="Justin Lung"
+      presentationDate="21-01-22"
+    />
+  );
 }
 
 export const getStaticProps = async () => {
-	const data = await nextClient.getPresentationId({
-		id: 'cl9pxhz8j07oo0aw9pekd5tgs',
-	})
+  const data = await nextClient.getPresentationId({
+    id: "cl9pxhz8j07oo0aw9pekd5tgs",
+  });
 
-	return {
-		props: {
-			presentation: data.presentation,
-		},
-	}
-}
+  return {
+    props: {
+      presentation: data.presentation,
+    },
+  };
+};
