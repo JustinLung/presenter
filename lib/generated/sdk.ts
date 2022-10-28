@@ -4840,7 +4840,13 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
-export type SlideBasicFragment = { __typename?: 'SlideBasic', colorScheme: ColorScheme, contents: { __typename?: 'RichText', html: string } };
+export type SlideBasicFragment = { __typename: 'SlideBasic', colorScheme: ColorScheme, contents: { __typename?: 'RichText', html: string } };
+
+export type SlideImageFragment = { __typename: 'SlideImage', colorScheme: ColorScheme, image: { __typename?: 'Asset', url: string } };
+
+export type SlideImageFullFragment = { __typename: 'SlideImageFull', image: { __typename?: 'Asset', url: string } };
+
+export type SlidePlanningFragment = { __typename: 'SlidePlanning', title: string, planningPoints?: string };
 
 export type GetPresentationIdQueryVariables = Exact<{
   id: Scalars['ID'];
@@ -4848,16 +4854,50 @@ export type GetPresentationIdQueryVariables = Exact<{
 
 
 export type GetPresentationIdQuery = { __typename?: 'Query', presentation?: { __typename?: 'Presentation', title: string, slides: Array<(
-      { __typename: 'SlideBasic' }
+      { __typename?: 'SlideBasic' }
       & SlideBasicFragment
-    ) | { __typename: 'SlideImage' } | { __typename: 'SlideImageFull' } | { __typename: 'SlidePlanning' }> } };
+    ) | (
+      { __typename?: 'SlideImage' }
+      & SlideImageFragment
+    ) | (
+      { __typename?: 'SlideImageFull' }
+      & SlideImageFullFragment
+    ) | (
+      { __typename?: 'SlidePlanning' }
+      & SlidePlanningFragment
+    )> } };
 
 export const SlideBasicFragmentDoc = gql`
     fragment SlideBasic on SlideBasic {
+  __typename
   contents {
     html
   }
   colorScheme
+}
+    `;
+export const SlideImageFragmentDoc = gql`
+    fragment SlideImage on SlideImage {
+  __typename
+  image {
+    url
+  }
+  colorScheme
+}
+    `;
+export const SlideImageFullFragmentDoc = gql`
+    fragment SlideImageFull on SlideImageFull {
+  __typename
+  image {
+    url
+  }
+}
+    `;
+export const SlidePlanningFragmentDoc = gql`
+    fragment SlidePlanning on SlidePlanning {
+  __typename
+  title
+  planningPoints
 }
     `;
 export const GetPresentationIdDocument = gql`
@@ -4865,14 +4905,25 @@ export const GetPresentationIdDocument = gql`
   presentation(where: {id: $id}) {
     title
     slides {
-      __typename
       ... on SlideBasic {
         ...SlideBasic
+      }
+      ... on SlideImage {
+        ...SlideImage
+      }
+      ... on SlideImageFull {
+        ...SlideImageFull
+      }
+      ... on SlidePlanning {
+        ...SlidePlanning
       }
     }
   }
 }
-    ${SlideBasicFragmentDoc}`;
+    ${SlideBasicFragmentDoc}
+${SlideImageFragmentDoc}
+${SlideImageFullFragmentDoc}
+${SlidePlanningFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 

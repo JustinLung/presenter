@@ -1,6 +1,6 @@
 import { nextClient } from '@lib/client'
 import { Presentation } from '@lib/generated/sdk'
-import { ComponentSwitch } from '@lib/graphql/components/ComponentSwitch'
+import { ComponentSwitch } from '@/components/ComponentSwitch'
 
 interface PageProps {
 	presentation: Presentation
