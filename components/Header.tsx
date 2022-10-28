@@ -1,5 +1,4 @@
 import { Flex, Link } from "@chakra-ui/react";
-import { theme } from "../styles/theme";
 
 export default function Header() {
   return (
@@ -7,7 +6,7 @@ export default function Header() {
       as="header"
       justify="space-between"
       alignItems="center"
-      bg={theme.colors.darkgrey}
+      bg="darkgrey"
       p="1.5rem"
       textDecoration="none"
     >
@@ -16,12 +15,13 @@ export default function Header() {
       </Link>
       <Link
         href="/"
-        bg={theme.colors.purple}
+        bg="purple"
         fontWeight="bold"
         px="1rem"
         py=".5rem"
         borderRadius=".2rem"
-        _hover={{ textDecoration: "none", bg: theme.colors.black }}
+        _hover={{ textDecoration: "none", bg: "black" }}
+        _focus={{ bg: "black" }}
       >
         Create Presentation
       </Link>

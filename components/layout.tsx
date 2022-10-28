@@ -1,11 +1,11 @@
 import Header from "./Header";
 import { ReactNode } from "react";
 
-interface Props {
+interface layoutProps {
   children: ReactNode;
 }
 
-export default function layout({ children }: Props) {
+export default function layout({ children }: layoutProps) {
   return (
     <>
       <Header />
