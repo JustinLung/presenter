@@ -1,5 +1,22 @@
-query testq {
-	presentation(where: { id: "cl9pxhz8j07oo0aw9pekd5tgs" }) {
+query getPresentationId($id: ID!) {
+	presentation(where: { id: $id }) {
 		title
+		slides {
+			... on SlideBasic {
+				...SlideBasic
+			}
+
+			... on SlideImage {
+				...SlideImage
+			}
+
+			... on SlideImageFull {
+				...SlideImageFull
+			}
+
+			... on SlidePlanning {
+				...SlidePlanning
+			}
+		}
 	}
 }
