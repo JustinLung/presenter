@@ -20,13 +20,13 @@ export function ComponentSwitch(props: ComponentSwitchProps) {
 			{data.map(slide => {
 				switch (slide.__typename) {
 					case 'SlideBasic':
-						return <SlideBasic key={slide.id} />
+						return <SlideBasic key={`slidebasic-${slide.id}`} />
 					case 'SlideImage':
-						return <SlideImage key={slide.id} />
+						return <SlideImage key={`slideimage-${slide.id}`} />
 					case 'SlideImageFull':
-						return <SlideImageFull key={slide.id} />
+						return <SlideImageFull key={`slideimagefull-${slide.id}`} />
 					case 'SlidePlanning':
-						return <SlidePlanning key={slide.id} />
+						return <SlidePlanning key={`slideplanning-${slide.id}`} />
 					default:
 						console.log('Component not found', slide)
 						return null
