@@ -2,6 +2,7 @@ import { Badge } from '../../../components/Badge'
 import { getColorScheme } from '@/helpers/getColorScheme'
 import { Box } from '@chakra-ui/react'
 import { SlideBasic } from '@lib/generated/sdk'
+import { fullscreenStore } from '@/state/fullscreen'
 
 interface SlideBasicProps {
 	data: SlideBasic
@@ -9,6 +10,7 @@ interface SlideBasicProps {
 
 export function SlideBasic(props: SlideBasicProps) {
 	const { data } = props
+	const { isFullscreen } = fullscreenStore()
 
 	return (
 		<Box p="2%">
@@ -19,7 +21,7 @@ export function SlideBasic(props: SlideBasicProps) {
 				pl="4%"
 				sx={{
 					'> *': {
-						fontSize: '1.8vw',
+						fontSize: isFullscreen ? '2.4vw' : '1.8vw',
 						marginBottom: '2%',
 					},
 					ul: {

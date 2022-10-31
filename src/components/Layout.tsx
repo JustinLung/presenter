@@ -9,7 +9,7 @@ interface layoutProps {
 export default function Layout({ children }: layoutProps) {
 	return (
 		<>
-			<Box display="grid" gridTemplateRows="auto 1fr" minH="100vh">
+			<Box display="grid" gridTemplateRows="5rem 1fr" minH="100vh">
 				<Header />
 				<Box as="main">{children}</Box>
 			</Box>
