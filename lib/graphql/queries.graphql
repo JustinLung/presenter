@@ -1,18 +1,28 @@
 query getPresentationId($id: ID!) {
-	presentation(where: { id: $id }) {
-		title
-		slides {
-			... on SlideBasic {
-				...SlideBasic
-			}
+  presentation(where: { id: $id }) {
+    title
+    slides {
+      ... on SlideBasic {
+        ...SlideBasic
+      }
 
-			... on SlideImage {
-				...SlideImage
-			}
+      ... on SlideImage {
+        ...SlideImage
+      }
 
-			... on SlideImageFull {
-				...SlideImageFull
-			}
-		}
-	}
+      ... on SlideImageFull {
+        ...SlideImageFull
+      }
+    }
+  }
+}
+
+query getPresentation {
+  presentations {
+    title
+    createdBy {
+      name
+    }
+    createdAt
+  }
 }

@@ -4567,6 +4567,11 @@ export type GetPresentationIdQuery = { __typename?: 'Query', presentation?: { __
       & SlideImageFullFragment
     )> } };
 
+export type GetPresentationQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetPresentationQuery = { __typename?: 'Query', presentations: Array<{ __typename?: 'Presentation', title: string, createdAt: any, createdBy?: { __typename?: 'User', name: string } }> };
+
 export const SlideBasicFragmentDoc = gql`
     fragment SlideBasic on SlideBasic {
   __typename
@@ -4619,6 +4624,17 @@ export const GetPresentationIdDocument = gql`
     ${SlideBasicFragmentDoc}
 ${SlideImageFragmentDoc}
 ${SlideImageFullFragmentDoc}`;
+export const GetPresentationDocument = gql`
+    query getPresentation {
+  presentations {
+    title
+    createdBy {
+      name
+    }
+    createdAt
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
@@ -4629,6 +4645,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     getPresentationId(variables: GetPresentationIdQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetPresentationIdQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetPresentationIdQuery>(GetPresentationIdDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPresentationId', 'query');
+    },
+    getPresentation(variables?: GetPresentationQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetPresentationQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetPresentationQuery>(GetPresentationDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPresentation', 'query');
     }
   };
 }
@@ -4639,6 +4658,9 @@ export function getSdkWithHooks(client: GraphQLClient, withWrapper: SdkFunctionW
     ...sdk,
     useGetPresentationId(key: SWRKeyInterface, variables: GetPresentationIdQueryVariables, config?: SWRConfigInterface<GetPresentationIdQuery, ClientError>) {
       return useSWR<GetPresentationIdQuery, ClientError>(key, () => sdk.getPresentationId(variables), config);
+    },
+    useGetPresentation(key: SWRKeyInterface, variables?: GetPresentationQueryVariables, config?: SWRConfigInterface<GetPresentationQuery, ClientError>) {
+      return useSWR<GetPresentationQuery, ClientError>(key, () => sdk.getPresentation(variables), config);
     }
   };
 }
