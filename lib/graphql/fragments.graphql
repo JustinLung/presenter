@@ -4,6 +4,7 @@ fragment SlideBasic on SlideBasic {
 		html
 	}
 	colorScheme
+	badge
 }
 
 fragment SlideImage on SlideImage {
