@@ -13,10 +13,6 @@ query getPresentationId($id: ID!) {
 			... on SlideImageFull {
 				...SlideImageFull
 			}
-
-			... on SlidePlanning {
-				...SlidePlanning
-			}
 		}
 	}
 }

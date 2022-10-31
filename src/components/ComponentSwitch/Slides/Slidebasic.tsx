@@ -1,4 +1,4 @@
-import { Badge } from '@/components/Badge'
+import { Badge } from '../../../components/Badge'
 import { getColorScheme } from '@/helpers/getColorScheme'
 import { Box } from '@chakra-ui/react'
 import { SlideBasic } from '@lib/generated/sdk'

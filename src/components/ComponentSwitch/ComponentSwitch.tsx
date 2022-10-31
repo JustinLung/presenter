@@ -8,7 +8,6 @@ import {
 	SlideImageFull,
 	SlideImageFullThumbnail,
 } from './Slides/SlideImageFull'
-import { SlidePlanning, SlidePlanningThumbnail } from './Slides/SlidePlanning'
 import slideStore from './../../state/slide'
 import { getColorScheme } from '@/helpers/getColorScheme'
 
@@ -35,15 +34,11 @@ export function ComponentSwitch(props: ComponentSwitchProps) {
 								break
 
 							case 'SlideImage':
-								slideEl = <SlideImageThumbnail />
+								slideEl = <SlideImageThumbnail data={slide} />
 								break
 
 							case 'SlideImageFull':
 								slideEl = <SlideImageFullThumbnail data={slide} />
-								break
-
-							case 'SlidePlanning':
-								slideEl = <SlidePlanningThumbnail />
 								break
 
 							default:
@@ -71,14 +66,12 @@ export function ComponentSwitch(props: ComponentSwitchProps) {
 								slideEl = <SlideBasic data={slide} />
 								break
 							case 'SlideImage':
-								slideEl = <SlideImage />
+								slideEl = <SlideImage data={slide} />
 								break
 							case 'SlideImageFull':
 								slideEl = <SlideImageFull data={slide} />
 								break
-							case 'SlidePlanning':
-								slideEl = <SlidePlanning />
-								break
+
 							default:
 								console.log('Component not found', slide)
 								slideEl = null
