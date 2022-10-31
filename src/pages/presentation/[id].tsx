@@ -1,7 +1,8 @@
 import { ComponentSwitch } from '@/components/ComponentSwitch'
+import { Fullscreen } from '@/components/Fullscreen'
 import FullSlide from '@/components/FullSlide'
 import SlideList from '@/components/SlideList'
-import slideStore from '@/state/slide'
+import { slideStore } from '@/state/slide'
 import { Box } from '@chakra-ui/react'
 import { nextClient } from '@lib/client'
 import { Presentation } from '@lib/generated/sdk'
@@ -19,6 +20,7 @@ export default function Page(props: PageProps) {
 		<Box display="grid" gridTemplateColumns="15rem auto" h="100%">
 			<SlideList>
 				<ComponentSwitch data={data.slides} />
+				<Fullscreen />
 			</SlideList>
 			<FullSlide>
 				<ComponentSwitch data={data.slides[activeIndex]} />
