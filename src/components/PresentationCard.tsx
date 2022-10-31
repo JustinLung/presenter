@@ -16,12 +16,13 @@ export default function PresentationCard({
   presentationLink,
 }: PresentationCardProps) {
   return (
-    <Flex direction="column" p="1.5rem">
+    <Flex direction="column">
       <Box
         bg="linear-gradient(43deg, rgba(22,22,22,1) 34%, rgba(84,40,127,1) 74%)"
         w="25rem"
         h="15rem"
         borderRadius=".3rem"
+        mt="2rem"
       >
         {/* TODO: Import Icon */}
         <Link href={presentationLink}>{/* <Play /> */}</Link>
