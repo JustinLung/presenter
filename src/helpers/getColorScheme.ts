@@ -3,11 +3,11 @@ import { ColorScheme } from '@lib/generated/sdk'
 export function getColorScheme(scheme: ColorScheme) {
 	switch (scheme) {
 		case 'green':
-			return { bgColor: '#66e5bf', color: '#050542' }
+			return { bgColor: 'fdndGreen', color: 'fdndBlue' }
 		case 'blue':
-			return { bgColor: '#050542', color: '#66e5bf' }
+			return { bgColor: 'fdndBlue', color: 'fdndGreen' }
 		case 'purple':
-			return { bgColor: '#a675f5', color: '#050542' }
+			return { bgColor: 'fdndPurple', color: 'fdndBlue' }
 		default:
 			return null
 	}
