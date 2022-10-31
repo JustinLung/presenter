@@ -25,4 +25,5 @@ fragment SlidePlanning on SlidePlanning {
 	__typename
 	title
 	planningPoints
+	colorScheme
 }
