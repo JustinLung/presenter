@@ -3043,6 +3043,7 @@ export type ScheduledReleaseWhereUniqueInput = {
 
 export type SlideBasic = {
   __typename?: 'SlideBasic';
+  badge?: Maybe<Scalars['String']>;
   colorScheme: ColorScheme;
   contents: RichText;
   /** The unique identifier */
@@ -3069,6 +3070,7 @@ export type SlideBasicConnection = {
 };
 
 export type SlideBasicCreateInput = {
+  badge?: InputMaybe<Scalars['String']>;
   colorScheme: ColorScheme;
   contents: Scalars['RichTextAST'];
 };
@@ -3109,6 +3111,25 @@ export type SlideBasicManyWhereInput = {
   OR?: InputMaybe<Array<SlideBasicWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  badge?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  badge_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  badge_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  badge_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  badge_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  badge_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  badge_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  badge_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  badge_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  badge_starts_with?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   /** All values that are contained in given list. */
   colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
@@ -3138,6 +3159,8 @@ export type SlideBasicManyWhereInput = {
 };
 
 export enum SlideBasicOrderByInput {
+  BadgeAsc = 'badge_ASC',
+  BadgeDesc = 'badge_DESC',
   ColorSchemeAsc = 'colorScheme_ASC',
   ColorSchemeDesc = 'colorScheme_DESC',
   IdAsc = 'id_ASC',
@@ -3225,6 +3248,7 @@ export type SlideBasicParentWhereUniqueInput = {
 };
 
 export type SlideBasicUpdateInput = {
+  badge?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   contents?: InputMaybe<Scalars['RichTextAST']>;
 };
@@ -3241,6 +3265,7 @@ export type SlideBasicUpdateManyInlineInput = {
 };
 
 export type SlideBasicUpdateManyInput = {
+  badge?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   contents?: InputMaybe<Scalars['RichTextAST']>;
 };
@@ -3312,6 +3337,25 @@ export type SlideBasicWhereInput = {
   OR?: InputMaybe<Array<SlideBasicWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  badge?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  badge_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  badge_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  badge_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  badge_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  badge_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  badge_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  badge_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  badge_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  badge_starts_with?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   /** All values that are contained in given list. */
   colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
@@ -3347,10 +3391,13 @@ export type SlideBasicWhereUniqueInput = {
 
 export type SlideImage = {
   __typename?: 'SlideImage';
+  badge?: Maybe<Scalars['String']>;
   colorScheme: ColorScheme;
+  contents: RichText;
   /** The unique identifier */
   id: Scalars['ID'];
   image: Asset;
+  rightSide?: Maybe<Scalars['Boolean']>;
   /** System stage field */
   stage: Stage;
 };
@@ -3378,8 +3425,11 @@ export type SlideImageConnection = {
 };
 
 export type SlideImageCreateInput = {
+  badge?: InputMaybe<Scalars['String']>;
   colorScheme: ColorScheme;
+  contents: Scalars['RichTextAST'];
   image: AssetCreateOneInlineInput;
+  rightSide?: InputMaybe<Scalars['Boolean']>;
 };
 
 export type SlideImageCreateManyInlineInput = {
@@ -3710,6 +3760,25 @@ export type SlideImageManyWhereInput = {
   OR?: InputMaybe<Array<SlideImageWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  badge?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  badge_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  badge_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  badge_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  badge_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  badge_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  badge_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  badge_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  badge_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  badge_starts_with?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   /** All values that are contained in given list. */
   colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
@@ -3737,13 +3806,20 @@ export type SlideImageManyWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
   image?: InputMaybe<AssetWhereInput>;
+  rightSide?: InputMaybe<Scalars['Boolean']>;
+  /** All values that are not equal to given value. */
+  rightSide_not?: InputMaybe<Scalars['Boolean']>;
 };
 
 export enum SlideImageOrderByInput {
+  BadgeAsc = 'badge_ASC',
+  BadgeDesc = 'badge_DESC',
   ColorSchemeAsc = 'colorScheme_ASC',
   ColorSchemeDesc = 'colorScheme_DESC',
   IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC'
+  IdDesc = 'id_DESC',
+  RightSideAsc = 'rightSide_ASC',
+  RightSideDesc = 'rightSide_DESC'
 }
 
 export type SlideImageParent = Presentation;
@@ -3827,8 +3903,11 @@ export type SlideImageParentWhereUniqueInput = {
 };
 
 export type SlideImageUpdateInput = {
+  badge?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
+  contents?: InputMaybe<Scalars['RichTextAST']>;
   image?: InputMaybe<AssetUpdateOneInlineInput>;
+  rightSide?: InputMaybe<Scalars['Boolean']>;
 };
 
 export type SlideImageUpdateManyInlineInput = {
@@ -3843,7 +3922,10 @@ export type SlideImageUpdateManyInlineInput = {
 };
 
 export type SlideImageUpdateManyInput = {
+  badge?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
+  contents?: InputMaybe<Scalars['RichTextAST']>;
+  rightSide?: InputMaybe<Scalars['Boolean']>;
 };
 
 export type SlideImageUpdateManyWithNestedWhereInput = {
@@ -3913,6 +3995,25 @@ export type SlideImageWhereInput = {
   OR?: InputMaybe<Array<SlideImageWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  badge?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  badge_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  badge_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  badge_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  badge_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  badge_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  badge_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  badge_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  badge_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  badge_starts_with?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   /** All values that are contained in given list. */
   colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
@@ -3940,6 +4041,9 @@ export type SlideImageWhereInput = {
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
   image?: InputMaybe<AssetWhereInput>;
+  rightSide?: InputMaybe<Scalars['Boolean']>;
+  /** All values that are not equal to given value. */
+  rightSide_not?: InputMaybe<Scalars['Boolean']>;
 };
 
 /** References SlideImage record uniquely */
@@ -4867,6 +4971,11 @@ export type GetPresentationIdQuery = { __typename?: 'Query', presentation?: { __
       & SlidePlanningFragment
     )> } };
 
+export type GetPresentationQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetPresentationQuery = { __typename?: 'Query', presentations: Array<{ __typename?: 'Presentation', title: string, createdAt: any, createdBy?: { __typename?: 'User', name: string } }> };
+
 export const SlideBasicFragmentDoc = gql`
     fragment SlideBasic on SlideBasic {
   __typename
@@ -4924,6 +5033,17 @@ export const GetPresentationIdDocument = gql`
 ${SlideImageFragmentDoc}
 ${SlideImageFullFragmentDoc}
 ${SlidePlanningFragmentDoc}`;
+export const GetPresentationDocument = gql`
+    query getPresentation {
+  presentations {
+    title
+    createdBy {
+      name
+    }
+    createdAt
+  }
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
@@ -4934,6 +5054,9 @@ export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = 
   return {
     getPresentationId(variables: GetPresentationIdQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetPresentationIdQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetPresentationIdQuery>(GetPresentationIdDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPresentationId', 'query');
+    },
+    getPresentation(variables?: GetPresentationQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GetPresentationQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetPresentationQuery>(GetPresentationDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPresentation', 'query');
     }
   };
 }
@@ -4944,6 +5067,9 @@ export function getSdkWithHooks(client: GraphQLClient, withWrapper: SdkFunctionW
     ...sdk,
     useGetPresentationId(key: SWRKeyInterface, variables: GetPresentationIdQueryVariables, config?: SWRConfigInterface<GetPresentationIdQuery, ClientError>) {
       return useSWR<GetPresentationIdQuery, ClientError>(key, () => sdk.getPresentationId(variables), config);
+    },
+    useGetPresentation(key: SWRKeyInterface, variables?: GetPresentationQueryVariables, config?: SWRConfigInterface<GetPresentationQuery, ClientError>) {
+      return useSWR<GetPresentationQuery, ClientError>(key, () => sdk.getPresentation(variables), config);
     }
   };
 }
