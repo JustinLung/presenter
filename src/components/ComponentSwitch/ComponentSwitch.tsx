@@ -8,7 +8,7 @@ import {
 	SlideImageFull,
 	SlideImageFullThumbnail,
 } from './Slides/SlideImageFull'
-import slideStore from './../../state/slide'
+import { slideStore } from './../../state/slide'
 import { getColorScheme } from '@/helpers/getColorScheme'
 
 interface ComponentSwitchProps {

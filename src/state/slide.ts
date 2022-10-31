@@ -8,4 +8,4 @@ const slideStore = create<SlideStoreProps>(() => ({
 	activeIndex: 0,
 }))
 
-export default slideStore
+export { slideStore }
