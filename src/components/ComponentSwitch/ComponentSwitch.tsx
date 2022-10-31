@@ -39,7 +39,7 @@ export function ComponentSwitch(props: ComponentSwitchProps) {
 								break
 
 							case 'SlideImageFull':
-								slideEl = <SlideImageFullThumbnail />
+								slideEl = <SlideImageFullThumbnail data={slide} />
 								break
 
 							case 'SlidePlanning':
@@ -74,7 +74,7 @@ export function ComponentSwitch(props: ComponentSwitchProps) {
 								slideEl = <SlideImage />
 								break
 							case 'SlideImageFull':
-								slideEl = <SlideImageFull />
+								slideEl = <SlideImageFull data={slide} />
 								break
 							case 'SlidePlanning':
 								slideEl = <SlidePlanning />

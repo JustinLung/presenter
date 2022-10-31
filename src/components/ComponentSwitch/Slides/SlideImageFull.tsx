@@ -1,9 +1,26 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Image } from '@chakra-ui/react'
+import { SlideImageFull } from '@lib/generated/sdk'
 
-export function SlideImageFull() {
-	return <Box>SlideImageFull</Box>
+interface SlideImageFullProps {
+	data: SlideImageFull
 }
 
-export function SlideImageFullThumbnail() {
-	return <Box>SlideImageFullThumb</Box>
+export function SlideImageFull(props: SlideImageFullProps) {
+	const { data } = props
+
+	return (
+		<Box>
+			<Image src={data.image.url} alt="title" />
+		</Box>
+	)
+}
+
+export function SlideImageFullThumbnail(props: SlideImageFullProps) {
+	const { data } = props
+
+	return (
+		<Box>
+			<Image src={data.image.url} alt="title" />
+		</Box>
+	)
 }
