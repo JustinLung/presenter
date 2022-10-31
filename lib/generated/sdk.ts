@@ -4570,7 +4570,7 @@ export type GetPresentationIdQuery = { __typename?: 'Query', presentation?: { __
 export type GetPresentationQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPresentationQuery = { __typename?: 'Query', presentations: Array<{ __typename?: 'Presentation', title: string, createdAt: any, createdBy?: { __typename?: 'User', name: string } }> };
+export type GetPresentationQuery = { __typename?: 'Query', presentations: Array<{ __typename?: 'Presentation', id: string, title: string, createdAt: any, createdBy?: { __typename?: 'User', name: string } }> };
 
 export const SlideBasicFragmentDoc = gql`
     fragment SlideBasic on SlideBasic {
@@ -4627,6 +4627,7 @@ ${SlideImageFullFragmentDoc}`;
 export const GetPresentationDocument = gql`
     query getPresentation {
   presentations {
+    id
     title
     createdBy {
       name

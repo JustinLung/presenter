@@ -28,7 +28,7 @@ export default function Page(props: PageProps) {
               presentationTitle={data.title}
               presentationAuthor={data.createdBy.name}
               presentationDate={data.createdAt.split("T")}
-              presentationLink="/"
+              presentationLink={`presentation/${data.id}`}
             />
           );
         })}
@@ -39,7 +39,7 @@ export default function Page(props: PageProps) {
 
 export const getStaticProps = async () => {
   const data = await nextClient.getPresentation();
-  console.log();
+  console.log(data);
   return {
     props: {
       data: data.presentations,

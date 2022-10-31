@@ -19,6 +19,7 @@ query getPresentationId($id: ID!) {
 
 query getPresentation {
   presentations {
+    id
     title
     createdBy {
       name
