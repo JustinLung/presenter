@@ -4846,7 +4846,7 @@ export type SlideImageFragment = { __typename: 'SlideImage', colorScheme: ColorS
 
 export type SlideImageFullFragment = { __typename: 'SlideImageFull', image: { __typename?: 'Asset', url: string } };
 
-export type SlidePlanningFragment = { __typename: 'SlidePlanning', title: string, planningPoints?: string };
+export type SlidePlanningFragment = { __typename: 'SlidePlanning', title: string, planningPoints?: string, colorScheme: ColorScheme };
 
 export type GetPresentationIdQueryVariables = Exact<{
   id: Scalars['ID'];
@@ -4898,6 +4898,7 @@ export const SlidePlanningFragmentDoc = gql`
   __typename
   title
   planningPoints
+  colorScheme
 }
     `;
 export const GetPresentationIdDocument = gql`

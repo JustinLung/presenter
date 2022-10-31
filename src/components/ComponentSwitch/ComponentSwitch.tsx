@@ -1,5 +1,5 @@
 import { Box, ListItem, ListItemProps } from '@chakra-ui/react'
-import { PresentationslidesUnion } from '@lib/generated/sdk'
+import { ColorScheme, PresentationslidesUnion } from '@lib/generated/sdk'
 import { Dispatch, ReactNode, SetStateAction } from 'react'
 //Components
 import { SlideBasic, SlideBasicThumbnail } from './Slides/Slidebasic'
@@ -10,6 +10,7 @@ import {
 } from './Slides/SlideImageFull'
 import { SlidePlanning, SlidePlanningThumbnail } from './Slides/SlidePlanning'
 import slideStore from './../../state/slide'
+import { getColorScheme } from '@/helpers/getColorScheme'
 
 interface ComponentSwitchProps {
 	data: PresentationslidesUnion[] | PresentationslidesUnion
@@ -52,6 +53,8 @@ export function ComponentSwitch(props: ComponentSwitchProps) {
 						return (
 							<Slide
 								key={`${slide.__typename}-${slide.id}`}
+								//@ts-ignore
+								scheme={slide?.colorScheme ? slide.colorScheme : null}
 								borderColor={activeIndex === index ? 'white' : 'transparent'}
 								onClick={() => slideStore.setState({ activeIndex: index })}>
 								{slideEl}
@@ -62,21 +65,35 @@ export function ComponentSwitch(props: ComponentSwitchProps) {
 			) : (
 				<>
 					{[data].map(slide => {
+						let slideEl = null
 						switch (slide.__typename) {
 							case 'SlideBasic':
-								return (
-									<SlideBasic data={slide} key={`slidebasic-${slide.id}`} />
-								)
+								slideEl = <SlideBasic data={slide} />
+								break
 							case 'SlideImage':
-								return <SlideImage key={`slideimage-${slide.id}`} />
+								slideEl = <SlideImage />
+								break
 							case 'SlideImageFull':
-								return <SlideImageFull key={`slideimagefull-${slide.id}`} />
+								slideEl = <SlideImageFull />
+								break
 							case 'SlidePlanning':
-								return <SlidePlanning key={`slideplanning-${slide.id}`} />
+								slideEl = <SlidePlanning />
+								break
 							default:
 								console.log('Component not found', slide)
-								return null
+								slideEl = null
 						}
+						//@ts-ignore
+						const colors = getColorScheme(slide.colorScheme)
+						return (
+							<Box
+								w="100%"
+								h="100%"
+								key={`${slide.__typename}-${slide.id}`}
+								{...colors}>
+								{slideEl}
+							</Box>
+						)
 					})}
 				</>
 			)}
@@ -85,17 +102,20 @@ export function ComponentSwitch(props: ComponentSwitchProps) {
 }
 
 interface SlideProps extends ListItemProps {
+	scheme?: ColorScheme
 	children: ReactNode
 }
 
 function Slide(props: SlideProps) {
-	const { children, ...rest } = props
+	const { scheme, children, ...rest } = props
+	const colors = getColorScheme(scheme)
+
 	return (
 		<ListItem
 			width="90%"
-			bgColor="purple	"
 			position="relative"
 			border="2px solid transparent"
+			{...colors}
 			sx={{
 				aspectRatio: '16/9',
 			}}
