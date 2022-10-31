@@ -13,10 +13,6 @@ query getPresentationId($id: ID!) {
       ... on SlideImageFull {
         ...SlideImageFull
       }
-
-      ... on SlidePlanning {
-        ...SlidePlanning
-      }
     }
   }
 }
@@ -29,9 +25,4 @@ query getPresentation {
     }
     createdAt
   }
-			... on SlideImageFull {
-				...SlideImageFull
-			}
-		}
-	}
 }
