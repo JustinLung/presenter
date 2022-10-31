@@ -39,7 +39,6 @@ export default function Page(props: PageProps) {
 
 export const getStaticProps = async () => {
   const data = await nextClient.getPresentation();
-  console.log(data);
   return {
     props: {
       data: data.presentations,
