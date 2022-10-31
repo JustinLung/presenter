@@ -1683,20 +1683,18 @@ export type PresentationWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']>;
 };
 
-export type PresentationslidesUnion = SlideBasic | SlideImage | SlideImageFull | SlidePlanning;
+export type PresentationslidesUnion = SlideBasic | SlideImage | SlideImageFull;
 
 export type PresentationslidesUnionConnectInput = {
   SlideBasic?: InputMaybe<SlideBasicConnectInput>;
   SlideImage?: InputMaybe<SlideImageConnectInput>;
   SlideImageFull?: InputMaybe<SlideImageFullConnectInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningConnectInput>;
 };
 
 export type PresentationslidesUnionCreateInput = {
   SlideBasic?: InputMaybe<SlideBasicCreateInput>;
   SlideImage?: InputMaybe<SlideImageCreateInput>;
   SlideImageFull?: InputMaybe<SlideImageFullCreateInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningCreateInput>;
 };
 
 export type PresentationslidesUnionCreateManyInlineInput = {
@@ -1713,14 +1711,12 @@ export type PresentationslidesUnionCreateWithPositionInput = {
   SlideBasic?: InputMaybe<SlideBasicCreateWithPositionInput>;
   SlideImage?: InputMaybe<SlideImageCreateWithPositionInput>;
   SlideImageFull?: InputMaybe<SlideImageFullCreateWithPositionInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningCreateWithPositionInput>;
 };
 
 export type PresentationslidesUnionUpdateInput = {
   SlideBasic?: InputMaybe<SlideBasicUpdateInput>;
   SlideImage?: InputMaybe<SlideImageUpdateInput>;
   SlideImageFull?: InputMaybe<SlideImageFullUpdateInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningUpdateInput>;
 };
 
 export type PresentationslidesUnionUpdateManyInlineInput = {
@@ -1738,7 +1734,6 @@ export type PresentationslidesUnionUpdateManyWithNestedWhereInput = {
   SlideBasic?: InputMaybe<SlideBasicUpdateManyWithNestedWhereInput>;
   SlideImage?: InputMaybe<SlideImageUpdateManyWithNestedWhereInput>;
   SlideImageFull?: InputMaybe<SlideImageFullUpdateManyWithNestedWhereInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningUpdateManyWithNestedWhereInput>;
 };
 
 export type PresentationslidesUnionUpdateOneInlineInput = {
@@ -1756,42 +1751,36 @@ export type PresentationslidesUnionUpdateWithNestedWhereUniqueAndPositionInput =
   SlideBasic?: InputMaybe<SlideBasicUpdateWithNestedWhereUniqueAndPositionInput>;
   SlideImage?: InputMaybe<SlideImageUpdateWithNestedWhereUniqueAndPositionInput>;
   SlideImageFull?: InputMaybe<SlideImageFullUpdateWithNestedWhereUniqueAndPositionInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningUpdateWithNestedWhereUniqueAndPositionInput>;
 };
 
 export type PresentationslidesUnionUpdateWithNestedWhereUniqueInput = {
   SlideBasic?: InputMaybe<SlideBasicUpdateWithNestedWhereUniqueInput>;
   SlideImage?: InputMaybe<SlideImageUpdateWithNestedWhereUniqueInput>;
   SlideImageFull?: InputMaybe<SlideImageFullUpdateWithNestedWhereUniqueInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningUpdateWithNestedWhereUniqueInput>;
 };
 
 export type PresentationslidesUnionUpsertWithNestedWhereUniqueAndPositionInput = {
   SlideBasic?: InputMaybe<SlideBasicUpsertWithNestedWhereUniqueAndPositionInput>;
   SlideImage?: InputMaybe<SlideImageUpsertWithNestedWhereUniqueAndPositionInput>;
   SlideImageFull?: InputMaybe<SlideImageFullUpsertWithNestedWhereUniqueAndPositionInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningUpsertWithNestedWhereUniqueAndPositionInput>;
 };
 
 export type PresentationslidesUnionUpsertWithNestedWhereUniqueInput = {
   SlideBasic?: InputMaybe<SlideBasicUpsertWithNestedWhereUniqueInput>;
   SlideImage?: InputMaybe<SlideImageUpsertWithNestedWhereUniqueInput>;
   SlideImageFull?: InputMaybe<SlideImageFullUpsertWithNestedWhereUniqueInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningUpsertWithNestedWhereUniqueInput>;
 };
 
 export type PresentationslidesUnionWhereInput = {
   SlideBasic?: InputMaybe<SlideBasicWhereInput>;
   SlideImage?: InputMaybe<SlideImageWhereInput>;
   SlideImageFull?: InputMaybe<SlideImageFullWhereInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningWhereInput>;
 };
 
 export type PresentationslidesUnionWhereUniqueInput = {
   SlideBasic?: InputMaybe<SlideBasicWhereUniqueInput>;
   SlideImage?: InputMaybe<SlideImageWhereUniqueInput>;
   SlideImageFull?: InputMaybe<SlideImageFullWhereUniqueInput>;
-  SlidePlanning?: InputMaybe<SlidePlanningWhereUniqueInput>;
 };
 
 export type PublishLocaleInput = {
@@ -4168,206 +4157,23 @@ export type SlidePlanningManyWhereInput = {
   planningPoints_starts_with?: InputMaybe<Scalars['String']>;
   title?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
-  title_contains?: InputMaybe<Scalars['String']>;
+  badge_contains?: InputMaybe<Scalars['String']>;
   /** All values ending with the given string. */
-  title_ends_with?: InputMaybe<Scalars['String']>;
+  badge_ends_with?: InputMaybe<Scalars['String']>;
   /** All values that are contained in given list. */
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  badge_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** All values that are not equal to given value. */
-  title_not?: InputMaybe<Scalars['String']>;
+  badge_not?: InputMaybe<Scalars['String']>;
   /** All values not containing the given string. */
-  title_not_contains?: InputMaybe<Scalars['String']>;
+  badge_not_contains?: InputMaybe<Scalars['String']>;
   /** All values not ending with the given string */
-  title_not_ends_with?: InputMaybe<Scalars['String']>;
+  badge_not_ends_with?: InputMaybe<Scalars['String']>;
   /** All values that are not contained in given list. */
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  badge_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
   /** All values not starting with the given string. */
-  title_not_starts_with?: InputMaybe<Scalars['String']>;
+  badge_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
-  title_starts_with?: InputMaybe<Scalars['String']>;
-};
-
-export enum SlidePlanningOrderByInput {
-  ColorSchemeAsc = 'colorScheme_ASC',
-  ColorSchemeDesc = 'colorScheme_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  PlanningPointsAsc = 'planningPoints_ASC',
-  PlanningPointsDesc = 'planningPoints_DESC',
-  TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
-}
-
-export type SlidePlanningParent = Presentation;
-
-export type SlidePlanningParentConnectInput = {
-  Presentation?: InputMaybe<PresentationConnectInput>;
-};
-
-export type SlidePlanningParentCreateInput = {
-  Presentation?: InputMaybe<PresentationCreateInput>;
-};
-
-export type SlidePlanningParentCreateManyInlineInput = {
-  /** Connect multiple existing SlidePlanningParent documents */
-  connect?: InputMaybe<Array<SlidePlanningParentWhereUniqueInput>>;
-  /** Create and connect multiple existing SlidePlanningParent documents */
-  create?: InputMaybe<Array<SlidePlanningParentCreateInput>>;
-};
-
-export type SlidePlanningParentCreateOneInlineInput = {
-  /** Connect one existing SlidePlanningParent document */
-  connect?: InputMaybe<SlidePlanningParentWhereUniqueInput>;
-  /** Create and connect one SlidePlanningParent document */
-  create?: InputMaybe<SlidePlanningParentCreateInput>;
-};
-
-export type SlidePlanningParentUpdateInput = {
-  Presentation?: InputMaybe<PresentationUpdateInput>;
-};
-
-export type SlidePlanningParentUpdateManyInlineInput = {
-  /** Connect multiple existing SlidePlanningParent documents */
-  connect?: InputMaybe<Array<SlidePlanningParentConnectInput>>;
-  /** Create and connect multiple SlidePlanningParent documents */
-  create?: InputMaybe<Array<SlidePlanningParentCreateInput>>;
-  /** Delete multiple SlidePlanningParent documents */
-  delete?: InputMaybe<Array<SlidePlanningParentWhereUniqueInput>>;
-  /** Disconnect multiple SlidePlanningParent documents */
-  disconnect?: InputMaybe<Array<SlidePlanningParentWhereUniqueInput>>;
-  /** Override currently-connected documents with multiple existing SlidePlanningParent documents */
-  set?: InputMaybe<Array<SlidePlanningParentWhereUniqueInput>>;
-  /** Update multiple SlidePlanningParent documents */
-  update?: InputMaybe<Array<SlidePlanningParentUpdateWithNestedWhereUniqueInput>>;
-  /** Upsert multiple SlidePlanningParent documents */
-  upsert?: InputMaybe<Array<SlidePlanningParentUpsertWithNestedWhereUniqueInput>>;
-};
-
-export type SlidePlanningParentUpdateManyWithNestedWhereInput = {
-  Presentation?: InputMaybe<PresentationUpdateManyWithNestedWhereInput>;
-};
-
-export type SlidePlanningParentUpdateOneInlineInput = {
-  /** Connect existing SlidePlanningParent document */
-  connect?: InputMaybe<SlidePlanningParentWhereUniqueInput>;
-  /** Create and connect one SlidePlanningParent document */
-  create?: InputMaybe<SlidePlanningParentCreateInput>;
-  /** Delete currently connected SlidePlanningParent document */
-  delete?: InputMaybe<Scalars['Boolean']>;
-  /** Disconnect currently connected SlidePlanningParent document */
-  disconnect?: InputMaybe<Scalars['Boolean']>;
-  /** Update single SlidePlanningParent document */
-  update?: InputMaybe<SlidePlanningParentUpdateWithNestedWhereUniqueInput>;
-  /** Upsert single SlidePlanningParent document */
-  upsert?: InputMaybe<SlidePlanningParentUpsertWithNestedWhereUniqueInput>;
-};
-
-export type SlidePlanningParentUpdateWithNestedWhereUniqueInput = {
-  Presentation?: InputMaybe<PresentationUpdateWithNestedWhereUniqueInput>;
-};
-
-export type SlidePlanningParentUpsertWithNestedWhereUniqueInput = {
-  Presentation?: InputMaybe<PresentationUpsertWithNestedWhereUniqueInput>;
-};
-
-export type SlidePlanningParentWhereInput = {
-  Presentation?: InputMaybe<PresentationWhereInput>;
-};
-
-export type SlidePlanningParentWhereUniqueInput = {
-  Presentation?: InputMaybe<PresentationWhereUniqueInput>;
-};
-
-export type SlidePlanningUpdateInput = {
-  colorScheme?: InputMaybe<ColorScheme>;
-  planningPoints?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-};
-
-export type SlidePlanningUpdateManyInlineInput = {
-  /** Create and connect multiple SlidePlanning component instances */
-  create?: InputMaybe<Array<SlidePlanningCreateWithPositionInput>>;
-  /** Delete multiple SlidePlanning documents */
-  delete?: InputMaybe<Array<SlidePlanningWhereUniqueInput>>;
-  /** Update multiple SlidePlanning component instances */
-  update?: InputMaybe<Array<SlidePlanningUpdateWithNestedWhereUniqueAndPositionInput>>;
-  /** Upsert multiple SlidePlanning component instances */
-  upsert?: InputMaybe<Array<SlidePlanningUpsertWithNestedWhereUniqueAndPositionInput>>;
-};
-
-export type SlidePlanningUpdateManyInput = {
-  colorScheme?: InputMaybe<ColorScheme>;
-  planningPoints?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-};
-
-export type SlidePlanningUpdateManyWithNestedWhereInput = {
-  /** Update many input */
-  data: SlidePlanningUpdateManyInput;
-  /** Document search */
-  where: SlidePlanningWhereInput;
-};
-
-export type SlidePlanningUpdateOneInlineInput = {
-  /** Create and connect one SlidePlanning document */
-  create?: InputMaybe<SlidePlanningCreateInput>;
-  /** Delete currently connected SlidePlanning document */
-  delete?: InputMaybe<Scalars['Boolean']>;
-  /** Update single SlidePlanning document */
-  update?: InputMaybe<SlidePlanningUpdateWithNestedWhereUniqueInput>;
-  /** Upsert single SlidePlanning document */
-  upsert?: InputMaybe<SlidePlanningUpsertWithNestedWhereUniqueInput>;
-};
-
-export type SlidePlanningUpdateWithNestedWhereUniqueAndPositionInput = {
-  /** Document to update */
-  data?: InputMaybe<SlidePlanningUpdateInput>;
-  /** Position in the list of existing component instances, will default to appending at the end of list */
-  position?: InputMaybe<ConnectPositionInput>;
-  /** Unique component instance search */
-  where: SlidePlanningWhereUniqueInput;
-};
-
-export type SlidePlanningUpdateWithNestedWhereUniqueInput = {
-  /** Document to update */
-  data: SlidePlanningUpdateInput;
-  /** Unique document search */
-  where: SlidePlanningWhereUniqueInput;
-};
-
-export type SlidePlanningUpsertInput = {
-  /** Create document if it didn't exist */
-  create: SlidePlanningCreateInput;
-  /** Update document if it exists */
-  update: SlidePlanningUpdateInput;
-};
-
-export type SlidePlanningUpsertWithNestedWhereUniqueAndPositionInput = {
-  /** Document to upsert */
-  data?: InputMaybe<SlidePlanningUpsertInput>;
-  /** Position in the list of existing component instances, will default to appending at the end of list */
-  position?: InputMaybe<ConnectPositionInput>;
-  /** Unique component instance search */
-  where: SlidePlanningWhereUniqueInput;
-};
-
-export type SlidePlanningUpsertWithNestedWhereUniqueInput = {
-  /** Upsert data */
-  data: SlidePlanningUpsertInput;
-  /** Unique document search */
-  where: SlidePlanningWhereUniqueInput;
-};
-
-/** Identifies documents */
-export type SlidePlanningWhereInput = {
-  /** Logical AND on all given filters. */
-  AND?: InputMaybe<Array<SlidePlanningWhereInput>>;
-  /** Logical NOT on all given filters combined by AND. */
-  NOT?: InputMaybe<Array<SlidePlanningWhereInput>>;
-  /** Logical OR on all given filters. */
-  OR?: InputMaybe<Array<SlidePlanningWhereInput>>;
-  /** Contains search across all appropriate fields. */
-  _search?: InputMaybe<Scalars['String']>;
+  badge_starts_with?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   /** All values that are contained in given list. */
   colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
@@ -4394,48 +4200,14 @@ export type SlidePlanningWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
-  planningPoints?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  planningPoints_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  planningPoints_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  planningPoints_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  image?: InputMaybe<AssetWhereInput>;
+  rightSide?: InputMaybe<Scalars['Boolean']>;
   /** All values that are not equal to given value. */
-  planningPoints_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  planningPoints_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  planningPoints_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  planningPoints_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values not starting with the given string. */
-  planningPoints_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  planningPoints_starts_with?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  /** All values containing the given string. */
-  title_contains?: InputMaybe<Scalars['String']>;
-  /** All values ending with the given string. */
-  title_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are contained in given list. */
-  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values that are not equal to given value. */
-  title_not?: InputMaybe<Scalars['String']>;
-  /** All values not containing the given string. */
-  title_not_contains?: InputMaybe<Scalars['String']>;
-  /** All values not ending with the given string */
-  title_not_ends_with?: InputMaybe<Scalars['String']>;
-  /** All values that are not contained in given list. */
-  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  /** All values not starting with the given string. */
-  title_not_starts_with?: InputMaybe<Scalars['String']>;
-  /** All values starting with the given string. */
-  title_starts_with?: InputMaybe<Scalars['String']>;
+  rightSide_not?: InputMaybe<Scalars['Boolean']>;
 };
 
-/** References SlidePlanning record uniquely */
-export type SlidePlanningWhereUniqueInput = {
+/** References SlideImage record uniquely */
+export type SlideImageWhereUniqueInput = {
   id?: InputMaybe<Scalars['ID']>;
 };
 
@@ -4944,13 +4716,11 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
-export type SlideBasicFragment = { __typename: 'SlideBasic', colorScheme: ColorScheme, contents: { __typename?: 'RichText', html: string } };
+export type SlideBasicFragment = { __typename: 'SlideBasic', colorScheme: ColorScheme, badge?: string, contents: { __typename?: 'RichText', html: string } };
 
-export type SlideImageFragment = { __typename: 'SlideImage', colorScheme: ColorScheme, image: { __typename?: 'Asset', url: string } };
+export type SlideImageFragment = { __typename: 'SlideImage', badge?: string, colorScheme: ColorScheme, rightSide?: boolean, image: { __typename?: 'Asset', url: string }, contents: { __typename?: 'RichText', html: string } };
 
 export type SlideImageFullFragment = { __typename: 'SlideImageFull', image: { __typename?: 'Asset', url: string } };
-
-export type SlidePlanningFragment = { __typename: 'SlidePlanning', title: string, planningPoints?: string };
 
 export type GetPresentationIdQueryVariables = Exact<{
   id: Scalars['ID'];
@@ -4966,9 +4736,6 @@ export type GetPresentationIdQuery = { __typename?: 'Query', presentation?: { __
     ) | (
       { __typename?: 'SlideImageFull' }
       & SlideImageFullFragment
-    ) | (
-      { __typename?: 'SlidePlanning' }
-      & SlidePlanningFragment
     )> } };
 
 export type GetPresentationQueryVariables = Exact<{ [key: string]: never; }>;
@@ -4983,6 +4750,7 @@ export const SlideBasicFragmentDoc = gql`
     html
   }
   colorScheme
+  badge
 }
     `;
 export const SlideImageFragmentDoc = gql`
@@ -4991,7 +4759,12 @@ export const SlideImageFragmentDoc = gql`
   image {
     url
   }
+  contents {
+    html
+  }
+  badge
   colorScheme
+  rightSide
 }
     `;
 export const SlideImageFullFragmentDoc = gql`
@@ -5000,13 +4773,6 @@ export const SlideImageFullFragmentDoc = gql`
   image {
     url
   }
-}
-    `;
-export const SlidePlanningFragmentDoc = gql`
-    fragment SlidePlanning on SlidePlanning {
-  __typename
-  title
-  planningPoints
 }
     `;
 export const GetPresentationIdDocument = gql`
@@ -5022,9 +4788,6 @@ export const GetPresentationIdDocument = gql`
       }
       ... on SlideImageFull {
         ...SlideImageFull
-      }
-      ... on SlidePlanning {
-        ...SlidePlanning
       }
     }
   }

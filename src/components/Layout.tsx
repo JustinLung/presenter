@@ -1,15 +1,18 @@
-import Header from "./Header";
-import { ReactNode } from "react";
+import Header from './Header'
+import { ReactNode } from 'react'
+import { Box } from '@chakra-ui/react'
 
 interface layoutProps {
-  children: ReactNode;
+	children: ReactNode
 }
 
 export default function Layout({ children }: layoutProps) {
-  return (
-    <>
-      <Header />
-      <main>{children}</main>
-    </>
-  );
+	return (
+		<>
+			<Box display="grid" gridTemplateRows="auto 1fr" minH="100vh">
+				<Header />
+				<Box as="main">{children}</Box>
+			</Box>
+		</>
+	)
 }

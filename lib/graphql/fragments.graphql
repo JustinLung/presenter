@@ -4,6 +4,7 @@ fragment SlideBasic on SlideBasic {
 		html
 	}
 	colorScheme
+	badge
 }
 
 fragment SlideImage on SlideImage {
@@ -11,7 +12,12 @@ fragment SlideImage on SlideImage {
 	image {
 		url
 	}
+	contents {
+		html
+	}
+	badge
 	colorScheme
+	rightSide
 }
 
 fragment SlideImageFull on SlideImageFull {
@@ -19,10 +25,4 @@ fragment SlideImageFull on SlideImageFull {
 	image {
 		url
 	}
-}
-
-fragment SlidePlanning on SlidePlanning {
-	__typename
-	title
-	planningPoints
 }

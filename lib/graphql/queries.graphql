@@ -29,4 +29,9 @@ query getPresentation {
     }
     createdAt
   }
+			... on SlideImageFull {
+				...SlideImageFull
+			}
+		}
+	}
 }
