@@ -1,5 +1,9 @@
 import { Box } from '@chakra-ui/react'
 
-export default function SlideImage() {
+export function SlideImage() {
 	return <Box>SlideImage</Box>
+}
+
+export function SlideImageThumbnail() {
+	return <Box>SlideImageThumb</Box>
 }
