@@ -13,12 +13,24 @@ export default function SlideList(props: SlideListProps) {
 			display="flex"
 			flexDir="column"
 			alignItems="center"
-			gap="1rem"
+			gap="2rem"
 			justifyContent="flex-start"
 			listStyleType="none"
 			bgColor="darkgrey"
-			h="100%"
+			h="calc(100vh - 5rem)"
+			__css={{
+				'&::-webkit-scrollbar': {
+					width: '5px',
+				},
+				'&::-webkit-scrollbar-track': {
+					bgColor: 'transparent',
+				},
+				'&::-webkit-scrollbar-thumb': {
+					bgColor: 'purple',
+				},
+			}}
 			m="0"
+			overflow="auto"
 			{...rest}>
 			{children}
 		</UnorderedList>

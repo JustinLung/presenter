@@ -20,7 +20,14 @@ export function SlideImageFullThumbnail(props: SlideImageFullProps) {
 
 	return (
 		<Box>
-			<Image src={data.image.url} alt="title" />
+			<Image
+				boxSize="100%"
+				w="100%"
+				maxW="auto"
+				objectFit="cover"
+				src={data.image.url}
+				alt="title"
+			/>
 		</Box>
 	)
 }

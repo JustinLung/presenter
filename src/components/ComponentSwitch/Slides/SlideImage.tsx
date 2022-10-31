@@ -1,5 +1,6 @@
 import { Badge } from '@/components/Badge'
 import { getColorScheme } from '@/helpers/getColorScheme'
+import { fullscreenStore } from '@/state/fullscreen'
 import { Box, Image } from '@chakra-ui/react'
 import { SlideImage } from '@lib/generated/sdk'
 
@@ -10,6 +11,7 @@ interface SlideImageProps {
 export function SlideImage(props: SlideImageProps) {
 	const { data } = props
 	const { rightSide } = data
+	const { isFullscreen } = fullscreenStore()
 
 	return (
 		<Box display="flex" h="100%">
@@ -21,7 +23,7 @@ export function SlideImage(props: SlideImageProps) {
 					pl="4%"
 					sx={{
 						'> *': {
-							fontSize: '1.8vw',
+							fontSize: isFullscreen ? '2.4vw' : '1.8vw',
 							marginBottom: '2%',
 						},
 						ul: {
