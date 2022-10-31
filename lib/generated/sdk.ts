@@ -3043,6 +3043,7 @@ export type ScheduledReleaseWhereUniqueInput = {
 
 export type SlideBasic = {
   __typename?: 'SlideBasic';
+  badge?: Maybe<Scalars['String']>;
   colorScheme: ColorScheme;
   contents: RichText;
   /** The unique identifier */
@@ -3069,6 +3070,7 @@ export type SlideBasicConnection = {
 };
 
 export type SlideBasicCreateInput = {
+  badge?: InputMaybe<Scalars['String']>;
   colorScheme: ColorScheme;
   contents: Scalars['RichTextAST'];
 };
@@ -3109,6 +3111,25 @@ export type SlideBasicManyWhereInput = {
   OR?: InputMaybe<Array<SlideBasicWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  badge?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  badge_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  badge_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  badge_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  badge_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  badge_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  badge_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  badge_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  badge_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  badge_starts_with?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   /** All values that are contained in given list. */
   colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
@@ -3138,6 +3159,8 @@ export type SlideBasicManyWhereInput = {
 };
 
 export enum SlideBasicOrderByInput {
+  BadgeAsc = 'badge_ASC',
+  BadgeDesc = 'badge_DESC',
   ColorSchemeAsc = 'colorScheme_ASC',
   ColorSchemeDesc = 'colorScheme_DESC',
   IdAsc = 'id_ASC',
@@ -3225,6 +3248,7 @@ export type SlideBasicParentWhereUniqueInput = {
 };
 
 export type SlideBasicUpdateInput = {
+  badge?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   contents?: InputMaybe<Scalars['RichTextAST']>;
 };
@@ -3241,6 +3265,7 @@ export type SlideBasicUpdateManyInlineInput = {
 };
 
 export type SlideBasicUpdateManyInput = {
+  badge?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   contents?: InputMaybe<Scalars['RichTextAST']>;
 };
@@ -3312,6 +3337,25 @@ export type SlideBasicWhereInput = {
   OR?: InputMaybe<Array<SlideBasicWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  badge?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  badge_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  badge_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  badge_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values that are not equal to given value. */
+  badge_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  badge_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  badge_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  badge_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  /** All values not starting with the given string. */
+  badge_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  badge_starts_with?: InputMaybe<Scalars['String']>;
   colorScheme?: InputMaybe<ColorScheme>;
   /** All values that are contained in given list. */
   colorScheme_in?: InputMaybe<Array<InputMaybe<ColorScheme>>>;
@@ -4840,7 +4884,7 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
-export type SlideBasicFragment = { __typename: 'SlideBasic', colorScheme: ColorScheme, contents: { __typename?: 'RichText', html: string } };
+export type SlideBasicFragment = { __typename: 'SlideBasic', colorScheme: ColorScheme, badge?: string, contents: { __typename?: 'RichText', html: string } };
 
 export type SlideImageFragment = { __typename: 'SlideImage', colorScheme: ColorScheme, image: { __typename?: 'Asset', url: string } };
 
@@ -4874,6 +4918,7 @@ export const SlideBasicFragmentDoc = gql`
     html
   }
   colorScheme
+  badge
 }
     `;
 export const SlideImageFragmentDoc = gql`
