@@ -1,9 +1,6 @@
-interface PlayIconProps {
-  width: number;
-  heigth: number;
-}
+import { Icon } from "../icons/IconInterface";
 
-export default function PlayIcon({ width, heigth }: PlayIconProps) {
+export default function PlayIcon({ width, heigth }: Icon) {
   return (
     <svg
       width={width}
