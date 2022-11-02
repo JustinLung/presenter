@@ -3,7 +3,7 @@ import { Fullscreen } from '@/components/Fullscreen'
 import FullSlide from '@/components/FullSlide'
 import SlideList from '@/components/SlideList'
 import { slideStore } from '@/state/slide'
-import { Box, Flex, Heading, Link, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Heading, Link, Text } from '@chakra-ui/react'
 import { nextClient } from '@lib/client'
 import { Presentation } from '@lib/generated/sdk'
 
@@ -15,6 +15,16 @@ interface PageProps {
 export default function Page(props: PageProps) {
 	const { data, id } = props
 	const { activeIndex } = slideStore()
+
+	function nextSlide() {
+		if (activeIndex + 1 == data.slides.length) return
+		slideStore.setState({ activeIndex: activeIndex + 1 })
+	}
+
+	function previousSlide() {
+		if (activeIndex == 0) return
+		slideStore.setState({ activeIndex: activeIndex - 1 })
+	}
 
 	return (
 		<Box display="grid" gridTemplateColumns="15rem auto" h="100%">
@@ -52,6 +62,14 @@ export default function Page(props: PageProps) {
 						</Link>
 					</Flex>
 				)}
+				<Flex justify="flex-end" gap="1rem" pt="5" ml="auto">
+					<Button onClick={previousSlide} bg="purple">
+						Previous
+					</Button>
+					<Button onClick={nextSlide} bg="purple">
+						Next
+					</Button>
+				</Flex>
 			</FullSlide>
 		</Box>
 	)
