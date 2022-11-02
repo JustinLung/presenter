@@ -20,6 +20,7 @@ export default function NoPageFound() {
         bg="purple"
         py=".5rem"
         px="1rem"
+        borderRadius=".2rem"
         _hover={{
           textDecoration: "none",
           bg: "black",
