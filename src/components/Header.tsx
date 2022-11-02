@@ -14,7 +14,9 @@ export default function Header() {
         fdnd.presenter
       </Link>
       <Link
-        href="/"
+        href="https://app.hygraph.com/d41469f3ff1b42a5bfeedf09936114d8/master/content/7cc0559de2bb4a689cfe4134fe2af694/view/57bfbe42b87d4f44b1eb4b1f591ff111"
+        target="_blank"
+        rel="noreferrer"
         bg="purple"
         fontWeight="bold"
         px="1rem"
