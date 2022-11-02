@@ -1,6 +1,6 @@
 import { Icon } from "../icons/IconInterface";
 
-export default function PlayIcon({ width, heigth }: Icon) {
+export default function PlayIcon({ width, heigth, color = "white" }: Icon) {
   return (
     <svg
       width={width}
@@ -11,7 +11,7 @@ export default function PlayIcon({ width, heigth }: Icon) {
     >
       <path
         d="M1 1V17L14 9L1 1Z"
-        stroke="white"
+        stroke={color}
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
