@@ -19,7 +19,8 @@ export default function Page(props: PageProps) {
 	return (
 		<Box display="grid" gridTemplateColumns="15rem auto" h="100%">
 			<SlideList>
-				<Fullscreen />
+				{data.slides.length ? <Fullscreen /> : null}
+
 				<ComponentSwitch data={data.slides} />
 			</SlideList>
 			<FullSlide>
