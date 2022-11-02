@@ -2,6 +2,7 @@ import { ComponentSwitch } from '@/components/ComponentSwitch'
 import { Fullscreen } from '@/components/Fullscreen'
 import FullSlide from '@/components/FullSlide'
 import SlideList from '@/components/SlideList'
+import { fullscreenStore } from '@/state/fullscreen'
 import { slideStore } from '@/state/slide'
 import { Box, Button, Flex, Heading, Link, Text } from '@chakra-ui/react'
 import { nextClient } from '@lib/client'
@@ -15,6 +16,7 @@ interface PageProps {
 export default function Page(props: PageProps) {
 	const { data, id } = props
 	const { activeIndex } = slideStore()
+	const { isFullscreen } = fullscreenStore()
 
 	function nextSlide() {
 		if (activeIndex + 1 == data.slides.length) return
@@ -62,14 +64,16 @@ export default function Page(props: PageProps) {
 						</Link>
 					</Flex>
 				)}
-				<Flex justify="flex-end" gap="1rem" pt="5" ml="auto">
-					<Button onClick={previousSlide} bg="purple">
-						Previous
-					</Button>
-					<Button onClick={nextSlide} bg="purple">
-						Next
-					</Button>
-				</Flex>
+				{!isFullscreen && (
+					<Flex justify="flex-end" gap="1rem" pt="5" ml="auto">
+						<Button onClick={previousSlide} bg="purple">
+							Previous
+						</Button>
+						<Button onClick={nextSlide} bg="purple">
+							Next
+						</Button>
+					</Flex>
+				)}
 			</FullSlide>
 		</Box>
 	)
