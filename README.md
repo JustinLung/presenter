@@ -1,6 +1,6 @@
 # 👩‍🏫 Presenter
 
-![Presenter Mockup]()
+![Presenter Mockup](https://github.com/JustinLung/presenter/blob/main/docs/mockup.png?raw=true)
 
 ## 📚 Inhoudsopgave
 
