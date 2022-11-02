@@ -24,12 +24,12 @@ export default function PresentationCard({
         h="15rem"
         borderRadius=".3rem"
         mt="2rem"
-        position="relative"
+        pos="relative"
       >
         <Link
           href={presentationLink}
           bg="darkgrey"
-          position="absolute"
+          pos="absolute"
           bottom="1rem"
           right="1rem"
           borderRadius="50%"
