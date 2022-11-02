@@ -63,6 +63,7 @@ export const getServerSideProps = async ({ query }) => {
 		props: {
 			data: data.presentation,
 			id: query.id,
+			headerTitle: `${data.presentation.title} - ${data.presentation.createdBy.name}`,
 		},
 	}
 }
