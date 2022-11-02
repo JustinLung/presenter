@@ -1,4 +1,4 @@
-import { Box, ListItem, ListItemProps } from '@chakra-ui/react'
+import { Box, Button, ListItem, ListItemProps } from '@chakra-ui/react'
 import { ColorScheme, PresentationslidesUnion } from '@lib/generated/sdk'
 import { Dispatch, ReactNode, SetStateAction } from 'react'
 //Components
@@ -112,8 +112,20 @@ function Slide(props: SlideProps) {
 			sx={{
 				aspectRatio: '16/9',
 			}}
+			_focusWithin={{
+				boxShadow: '0px 0 0 4px white',
+			}}
 			{...rest}>
-			{children}
+			<Button
+				outline="0"
+				border="none"
+				w="100%"
+				h="100%"
+				p="0"
+				display="block"
+				bgColor="transparent">
+				{children}
+			</Button>
 		</ListItem>
 	)
 }
