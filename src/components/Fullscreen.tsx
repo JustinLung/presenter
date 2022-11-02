@@ -18,7 +18,6 @@ export function Fullscreen({}) {
   const nextSlide = useCallback(
     (e: KeyboardEvent) => {
       if (!isFullscreen) return;
-      console.log(e.key);
       if (e.key === " " || e.key === "Enter") {
         slideStore.setState((state) => {
           return { activeIndex: state.activeIndex + 1 };

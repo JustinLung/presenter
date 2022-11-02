@@ -25,5 +25,13 @@ query getPresentation {
       name
     }
     createdAt
+    slides(first: 1) {
+      ... on SlideBasic {
+        colorScheme
+      }
+      ... on SlideImage {
+        colorScheme
+      }
+    }
   }
 }
