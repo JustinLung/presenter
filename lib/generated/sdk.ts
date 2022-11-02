@@ -4556,7 +4556,7 @@ export type GetPresentationIdQueryVariables = Exact<{
 }>;
 
 
-export type GetPresentationIdQuery = { __typename?: 'Query', presentation?: { __typename?: 'Presentation', title: string, slides: Array<(
+export type GetPresentationIdQuery = { __typename?: 'Query', presentation?: { __typename?: 'Presentation', title: string, createdBy?: { __typename?: 'User', name: string }, slides: Array<(
       { __typename?: 'SlideBasic' }
       & SlideBasicFragment
     ) | (
@@ -4608,6 +4608,9 @@ export const GetPresentationIdDocument = gql`
     query getPresentationId($id: ID!) {
   presentation(where: {id: $id}) {
     title
+    createdBy {
+      name
+    }
     slides {
       ... on SlideBasic {
         ...SlideBasic
