@@ -42,7 +42,7 @@ export default function Page(props: PageProps) {
 	)
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const data = await nextClient.getPresentation()
 	const presentations = data.presentations.sort((a, b) => {
 		const dateA = new Date(a.createdAt)
@@ -53,5 +53,6 @@ export const getServerSideProps = async () => {
 		props: {
 			data: presentations,
 		},
+		revalidate: 60,
 	}
 }
