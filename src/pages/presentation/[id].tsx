@@ -83,7 +83,7 @@ export default function Page(props: PageProps) {
 	)
 }
 
-export const getServerSideProps = async ({ query }) => {
+export const getStaticProps = async ({ query }) => {
 	const data = await nextClient.getPresentationId({ id: query.id })
 
 	return {
@@ -92,5 +92,6 @@ export const getServerSideProps = async ({ query }) => {
 			id: query.id,
 			headerTitle: `${data.presentation.title} - ${data.presentation.createdBy.name}`,
 		},
+		revalidate: 60,
 	}
 }
